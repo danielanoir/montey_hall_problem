@@ -1,6 +1,6 @@
 $(document).ready(function(){
-// alert("Welcome to the Monty Hall game show! behind one door is a car and behind the other two doors are goats. You win if you choose the car. Please click a door to choose.")
-//
+alert("Welcome to the Monty Hall game show! behind one door is a car and behind the other two doors are goats. You win if you choose the car. Please click a door to choose.")
+
 
 var prizeImages = [$('#goatOne'), $('#goatTwo'), $('#car')]
 
