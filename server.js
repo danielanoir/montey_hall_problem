@@ -16,13 +16,15 @@ app.engine(".hbs", hbs({
   defaultLayout:     "game"
 }));
 
-app.use('pubstuff', express.static(__dirname + '/public'))
-
+app.use(express.static(__dirname + '/public'))
 
 app.get('/', function(req, res){
-  res.render('game', {layout: false});
+  var a = 1
+  res.render('game', {a: a});
 });
 
 app.listen(3000, function(){
   console.log('listening on *:3000');
 });
+
+exports = module.exports = app;

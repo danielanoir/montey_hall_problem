@@ -1,0 +1,11 @@
+.doorOne, .doorTwo, .doorThree {
+  display: inline-block;
+  border: solid black;
+  width: 100px;
+  height: 100px;
+  margin: 20px;
+}
+
+#goatOne, #goatTwo, #car {
+  visibility: hidden;
+}
