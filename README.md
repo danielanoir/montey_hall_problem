@@ -1,11 +1,15 @@
 The Game:
 Suppose you're on a game show, and you're given the choice of three doors: Behind one door is a car; behind the others, goats. You pick a door, say No. 1, and the host, who knows what's behind the doors, opens another door, say No. 3, which has a goat. He then says to you, "Do you want to pick door No. 2?" Is it to your advantage to switch your choice?
 
+****************************************
+
 Websockets, Mongo, Node, Angular, Express, JavaScript, JQuery, HTML, CSS.
+
+*****************************************
 
 bronze:
   Websockets:
-    Use websockets so app is regularly updating with each users scores. 
+    Use websockets so app is regularly updating with each users scores.
   JS:
     use prompts to get user answer
     create 3 divs with classes of door 1, 2 and 3
