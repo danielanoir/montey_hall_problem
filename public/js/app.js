@@ -1,18 +1,27 @@
 var montyHall = angular.module('montyHall', []);
-console.log("HI");
-
 montyHall.controller('mainController', function($scope) {
 
-var Door = function(isOpen, isSelected, isPrize) {
-  this.isOpen = isOpen;
-  this.isSelected = isSelected;
-  this.isPrize = isPrize;
-};
+  var Door = function(isOpen, isSelected, isPrize) {
+    this.isOpen = isOpen;
+    this.isSelected = isSelected;
+    this.isPrize = isPrize;
+  };
 
-  $scope.door1 = new Door(0, 0, 0);
-  $scope.door2 = new Door(0, 0, 0);
-  $scope.door3 = new Door(0, 0, 0);
+var doorCount = 3;
 
+for (var i = 1; i <= doorCount; i++) {
+    isOpen = 0;
+    isSelected = 0;
+    isPrize = 0;
+  var doorName = "door" + i.toString()
+  $scope[doorName] = new Door(isOpen,isSelected,isPrize);
+}
+
+  var openDoor = function(door) {
+    door["isOpen"] = 1;
+  }
+
+  console.log($scope);
 
 });
 
