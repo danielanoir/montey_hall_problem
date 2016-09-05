@@ -1,31 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-us" ng-app="montyHall">
 <head>
-  <title>Montey Hall</title>
+  <title>The Monty Hall</title>
+  <link rel="shortcut icon" href="/css/favicon.ico"/>
   <link rel="stylesheet" href="/css/styles.css"/>
+  <script src="https://code.angularjs.org/1.5.8/angular.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
   <script src="/js/app.js"></script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular-resource.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.min.js"></script>
-
 </head>
-
 <body>
-
   <h1>The Monty Hall Problem</h1>
-<div class="allDoors">
-  <div class="doorOne">Door One
-  </div>
-  <div class="doorTwo">Door Two</div>
-  <div class="doorThree">Door Three</div>
+<div ng-controller="mainController">
+  <div ng-isPrize="0" ng-isSelected="0" ng-isOpen="0" id="door1" class="door">Door One</div>
+  <div ng-isPrize="0" ng-isSelected="0" ng-isOpen="0" id="door2" class="door">Door Two</div>
+  <div ng-isPrize="0" ng-isSelected="0" ng-isOpen="0" id="door3" class="door">Door Three</div>
 </div>
-<div class="images">
-  <img id="goatOne" width="250" src="http://agrifarming.in/wp-content/uploads/2015/03/Beetal-Goat-buck.jpeg" >
-  <img id="goatTwo" width="250" src="http://thumbs.media.smithsonianmag.com//filer/b9/d2/b9d271f3-7f66-4132-b5af-7d33844505b7/goat.jpg__800x600_q85_crop.jpg">"
-  <img id="car" width="250" src="http://www.terrapass.com/images/blogposts/old-car.jpg">
-</div>
+
+  <!-- <img id="goat" width="250" src="http://agrifarming.in/wp-content/uploads/2015/03/Beetal-Goat-buck.jpeg" >
+  <img id="prize" width="250" src="http://www.terrapass.com/images/blogposts/old-car.jpg"> -->
 
 </body>
 </html>

@@ -1,6 +1,15 @@
+body {
+  background-image: url("http://hashook.com/wp-content/uploads/2015/02/inspiration-tiles-simplistic-black-and-white-interior-themes-added-lovable-checkered-floor-ceramic-tiled-installations-designs-arousing-checkered-floor-black-and-white-tile-decoration.jpg");
+  background-size: contain;
+  background-color: black;
+  background-attachment: fixed;
+  background-repeat: repeat-x;
+  background-position: bottom;
+  color: white;
+}
 .doorOne, .doorTwo, .doorThree {
   display: inline-block;
-  border: solid black;
+  border: solid white;
   width: 100px;
   height: 100px;
   margin: 20px;
