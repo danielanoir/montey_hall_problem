@@ -1,12 +1,14 @@
 var montyHall = angular.module('montyHall', []);
 montyHall.controller('mainController', ['$scope', function(s) {
 
+  s.name = "dani";
   var randBetween = function(min,max) {
     return Math.floor(Math.random() * (max - min + 1) + min)
   }
 
-  var Door = function(doorName, isOpen, isSelected, isPrize) {
+  var Door = function(doorName, doorLabel, isOpen, isSelected, isPrize) {
     this.doorName = doorName;
+    this.doorLabel = doorLabel;
     this.isOpen = isOpen;
     this.isSelected = isSelected;
     this.isPrize = isPrize;
@@ -25,7 +27,8 @@ for (var i = 1; i <= doorCount; i++) {
   }
 
   var doorName = "door" + i.toString();
-  s[doorName] = new Door(doorName, isOpen,isSelected,isPrize);
+  var doorLabel = "Door " + i.toString();
+  s[doorName] = new Door(doorName, doorLabel, isOpen,isSelected,isPrize);
   doorList.push(s[doorName]);
 }
 
@@ -37,5 +40,6 @@ var selectDoor = function(door) {
 }
 
 console.log(s);
+s.doorLabel = s.door1["doorLabel"]
 
 }]);
