@@ -33,9 +33,6 @@ for (var i = 1; i <= doorCount; i++) {
   doorList.push(s[doorName]);
 }
 
-var openDoor = function(door) {
-  door["isOpen"] = 1
-}
 var selectDoor = function(door) {
   door["isSelected"] = 1
 }
@@ -51,10 +48,21 @@ for (var i = 0; i < doorList.length; i++) {
   }
 }
 
+var openDoor = function(door) {
+  door["isOpen"] = 1;
+  if (door["isPrize"] == 1) {
+    $('#' + door["doorName"]).html('<img src="http://www.usa.philips.com/c-dam/b2c/category-pages/lighting/car-lights/master/footer/nafta-car.png"></img>')
+  } else {
+    $('#' + door["doorName"]).html('<img src="http://animalia-life.com/data_images/goat/goat4.jpg"></img>')
+  }
+}
 
-//below shows the prize.
+$(".door").click(function(event) {
+  //need to change s.door1 to s. id of the door clicked.
+  openDoor(s[event.target.id]);
+});
 
-$('#' + prizeDoorId).html("PRIZE");
+
 
 console.log(s);
 s.doorLabel = s.door1["doorLabel"]

@@ -8,6 +8,10 @@ body {
   margin: 20px;
 }
 
+img {
+  height: 100px;
+  width: 100px;
+}
 /*#goatOne, #goatTwo, #car {
   visibility: hidden;
 }*/
