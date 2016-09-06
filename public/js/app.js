@@ -1,5 +1,5 @@
 var montyHall = angular.module('montyHall', []);
-montyHall.controller('mainController', function($scope) {
+montyHall.controller('mainController', ['$scope', function(s) {
 
   var randBetween = function(min,max) {
     return Math.floor(Math.random() * (max - min + 1) + min)
@@ -25,13 +25,17 @@ for (var i = 1; i <= doorCount; i++) {
   }
 
   var doorName = "door" + i.toString();
-  $scope[doorName] = new Door(doorName, isOpen,isSelected,isPrize);
-  doorList.push($scope[doorName]);
+  s[doorName] = new Door(doorName, isOpen,isSelected,isPrize);
+  doorList.push(s[doorName]);
 }
 
 var openDoor = function(door) {
   door["isOpen"] = 1
 }
+var selectDoor = function(door) {
+  door["isSelected"] = 1
+}
 
-console.log($scope);
-});
+console.log(s);
+
+}]);
