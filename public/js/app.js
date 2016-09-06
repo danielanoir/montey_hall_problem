@@ -34,7 +34,8 @@ for (var i = 1; i <= doorCount; i++) {
 }
 
 var selectDoor = function(door) {
-  door["isSelected"] = 1
+  door["isSelected"] = 1;
+  $('#' + door["doorName"]).addClass("selected");
 }
 
 for (var i = 0; i < doorList.length; i++) {
@@ -58,8 +59,15 @@ var openDoor = function(door) {
 }
 
 $(".door").click(function(event) {
-  //need to change s.door1 to s. id of the door clicked.
-  openDoor(s[event.target.id]);
+  selectDoor(s[event.target.id]);
+  var candidates = [];
+  for (var i = 0; i < doorList.length; i++) {
+    if (doorList[i]["isPrize"] == 0 && doorList[i]["isSelected"] == 0) {
+      candidates.push(doorList[i]["doorName"])
+    }
+  }
+  var doorRevealedIndex = randBetween(0, candidates.length-1);
+  openDoor(s[candidates[doorRevealedIndex]]);
 });
 
 

@@ -8,6 +8,9 @@ body {
   margin: 20px;
 }
 
+.selected {
+  border: solid red;
+}
 img {
   height: 100px;
   width: 100px;
