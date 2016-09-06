@@ -77,14 +77,16 @@ $(".door").click(function(event) {
       openDoor(s[doorList[i]["doorName"]])
     }
   }
+  var userInput = prompt("would you like to STICK with your current door or SWITCH to the other option?");
+  if (userInput == "STICK") {
+    openDoor(s[event.target.id]);
+  } else {
+    openDoor(s[doNotRevealDoorName]);
+  }
 
-  //  var doorRevealedIndex = randBetween(0, candidates.length-1);
-  // openDoor(s[candidates[doorRevealedIndex]]);
 });
 
-
-
-console.log(s);
-s.doorLabel = s.door1["doorLabel"]
+// console.log(s);
+// s.doorLabel = s.door1["doorLabel"]
 
 }]);
