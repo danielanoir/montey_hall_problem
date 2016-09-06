@@ -60,14 +60,26 @@ var openDoor = function(door) {
 
 $(".door").click(function(event) {
   selectDoor(s[event.target.id]);
+
   var candidates = [];
   for (var i = 0; i < doorList.length; i++) {
     if (doorList[i]["isPrize"] == 0 && doorList[i]["isSelected"] == 0) {
       candidates.push(doorList[i]["doorName"])
     }
   }
-  var doorRevealedIndex = randBetween(0, candidates.length-1);
-  openDoor(s[candidates[doorRevealedIndex]]);
+  var doNotRevealIndex = randBetween(0, candidates.length-1);;
+  var doNotRevealDoorName = candidates[doNotRevealIndex];
+  if (prizeDoorId != event.target.id) {
+    doNotRevealDoorName = prizeDoorId
+  }
+  for (var i = 0; i < doorList.length; i++) {
+    if (doorList[i]["isSelected"] != 1 && doorList[i]["doorName"] != doNotRevealDoorName) {
+      openDoor(s[doorList[i]["doorName"]])
+    }
+  }
+
+  //  var doorRevealedIndex = randBetween(0, candidates.length-1);
+  // openDoor(s[candidates[doorRevealedIndex]]);
 });
 
 
