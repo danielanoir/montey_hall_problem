@@ -1,7 +1,8 @@
 var montyHall = angular.module('montyHall', []);
-montyHall.controller('mainController', ['$scope', function(s) {
+montyHall.controller('gameController', ['$scope', function(s) {
 
-  s.name = "dani";
+
+
   var randBetween = function(min,max) {
     return Math.floor(Math.random() * (max - min + 1) + min)
   }
@@ -16,13 +17,13 @@ montyHall.controller('mainController', ['$scope', function(s) {
 
 var doorCount = 3;
 var doorList = [];
-var prizeDoor = randBetween(1,doorCount);
+var prizeDoorNumber = randBetween(1,doorCount);
 
 for (var i = 1; i <= doorCount; i++) {
   var isOpen = 0;
   var isSelected = 0;
   var isPrize = 0;
-  if (i == prizeDoor) {
+  if (i == prizeDoorNumber) {
       isPrize = 1;
   }
 
@@ -38,6 +39,22 @@ var openDoor = function(door) {
 var selectDoor = function(door) {
   door["isSelected"] = 1
 }
+
+for (var i = 0; i < doorList.length; i++) {
+  var element = $("<div id='" + doorList[i]["doorName"] + "' class='door'></div>").text(doorList[i]["doorLabel"]);
+  $("#gameStage").append(element);
+}
+
+for (var i = 0; i < doorList.length; i++) {
+  if (doorList[i]["isPrize"] == 1) {
+    var prizeDoorId = doorList[i]["doorName"]
+  }
+}
+
+
+//below shows the prize.
+
+$('#' + prizeDoorId).html("PRIZE");
 
 console.log(s);
 s.doorLabel = s.door1["doorLabel"]
