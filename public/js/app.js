@@ -67,7 +67,7 @@ $(".door").click(function(event) {
       candidates.push(doorList[i]["doorName"])
     }
   }
-  var doNotRevealIndex = randBetween(0, candidates.length-1);;
+  var doNotRevealIndex = randBetween(0, candidates.length-1);
   var doNotRevealDoorName = candidates[doNotRevealIndex];
   if (prizeDoorId != event.target.id) {
     doNotRevealDoorName = prizeDoorId
@@ -80,9 +80,20 @@ $(".door").click(function(event) {
   var userInput = prompt("would you like to STICK with your current door or SWITCH to the other option?");
   if (userInput == "STICK") {
     openDoor(s[event.target.id]);
+    if (event.target.id == prizeDoorId) {
+      console.log("you won!");
+    } else {
+      console.log("You lost.")
+    }
   } else {
     openDoor(s[doNotRevealDoorName]);
+    if (event.target.id != prizeDoorId) {
+      console.log("you won!");
+    } else {
+      console.log("You lost.")
+    }
   }
+
 
 });
 
