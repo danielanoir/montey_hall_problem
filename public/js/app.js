@@ -82,18 +82,21 @@ $(".door").click(function(event) {
     openDoor(s[event.target.id]);
     if (event.target.id == prizeDoorId) {
       console.log("you won!");
+      $("#stuck").append(+1);
     } else {
-      console.log("You lost.")
+      console.log("You lost.");
     }
   } else {
     openDoor(s[doNotRevealDoorName]);
     if (event.target.id != prizeDoorId) {
       console.log("you won!");
+      $("#switched").append(+1);
     } else {
-      console.log("You lost.")
+      console.log("You lost.");
     }
   }
 
+  // $("#gameStage").append(element);
 
 });
 

@@ -15,6 +15,16 @@ img {
   height: 100px;
   width: 100px;
 }
+
+#scoreBoard {
+  height: 50px;
+  width: 300px;
+  border: solid green;
+}
+
+#stuck, #switched {
+  background-color: yellow;
+}
 /*#goatOne, #goatTwo, #car {
   visibility: hidden;
 }*/
